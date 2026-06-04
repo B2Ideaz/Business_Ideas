@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Business Concepts</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        nav {
+            background: #222;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .idea {
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .idea h2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .idea .details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .idea .details.active {
+            max-height: 1000px;
+        }
+
+        .arrow {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Learn
+</header>
+
+<nav>
+    <a href="index.html">Ideas</a>
+    <a href="learn.html">Learn</a>
+</nav>
+
+<div class="container">
+
+    <div class="search-bar">
+        <input type="text"
+               id="searchInput"
+               onkeyup="searchDefinitions()"
+               placeholder="Search definitions...">
+    </div>
+
+    <h1 style="color:white;">Definitions</h1>
+
+    <h2 style="color:white;">Basic</h2>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Business <span class="arrow">⌄</span></h2>
+        <p><i>An activity or organization that provides value in exchange for money.</i></p>
+
+        <div class="details">
+            <p>
+                A business creates products or services that customers are willing
+                to pay for. Businesses can be small, large, local, or global.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Company <span class="arrow">⌄</span></h2>
+        <p><i>A legal entity used to operate a business.</i></p>
+
+        <div class="details">
+            <p>
+                A company can own property, hire employees, sign contracts,
+                earn revenue, and incur expenses.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Product <span class="arrow">⌄</span></h2>
+        <p><i>Something a business sells.</i></p>
+
+        <div class="details">
+            <p>
+                Products can be physical goods, digital goods, software,
+                subscriptions, or anything else customers pay for.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Service <span class="arrow">⌄</span></h2>
+        <p><i>Work performed for a customer.</i></p>
+
+        <div class="details">
+            <p>
+                Unlike products, services are usually activities performed for
+                someone, such as consulting, accounting, or lawn care.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Customer <span class="arrow">⌄</span></h2>
+        <p><i>A person or organization that buys a product or service.</i></p>
+
+        <div class="details">
+            <p>
+                Customers are the source of revenue for most businesses.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Revenue <span class="arrow">⌄</span></h2>
+        <p><i>The money a business earns from sales.</i></p>
+
+        <div class="details">
+            <p>
+                Revenue is the total amount of money generated before expenses
+                are deducted.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Cost <span class="arrow">⌄</span></h2>
+        <p><i>The money spent operating a business.</i></p>
+
+        <div class="details">
+            <p>
+                Costs include rent, salaries, software, marketing,
+                equipment, and other expenses.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Profit <span class="arrow">⌄</span></h2>
+        <p><i>The money left after costs are deducted.</i></p>
+
+        <div class="details">
+            <p>
+                Profit = Revenue − Costs
+            </p>
+
+            <p>
+                Businesses generally aim to generate profit over time.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Startup <span class="arrow">⌄</span></h2>
+        <p><i>A business designed for rapid growth.</i></p>
+
+        <div class="details">
+            <p>
+                Startups often focus on innovation, technology,
+                and scalability.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Market Share <span class="arrow">⌄</span></h2>
+        <p><i>The percentage of a market controlled by a business.</i></p>
+
+        <div class="details">
+            <p>
+                Market share helps measure a company's position relative
+                to competitors.
+            </p>
+        </div>
+    </div>
+
+    <h2 style="color:white;">Advanced</h2>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Subscription Model <span class="arrow">⌄</span></h2>
+        <p><i>Customers pay recurring fees for access.</i></p>
+
+        <div class="details">
+            <p>
+                Common among SaaS companies, streaming services,
+                and memberships.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Freemium Model <span class="arrow">⌄</span></h2>
+        <p><i>Basic features are free while advanced features require payment.</i></p>
+
+        <div class="details">
+            <p>
+                This model helps attract users before converting some into
+                paying customers.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Marketplace Model <span class="arrow">⌄</span></h2>
+        <p><i>Connect buyers and sellers and earn a fee.</i></p>
+
+        <div class="details">
+            <p>
+                The platform itself often does not own the goods being sold.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Advertising Model <span class="arrow">⌄</span></h2>
+        <p><i>Revenue comes from displaying advertisements.</i></p>
+
+        <div class="details">
+            <p>
+                Businesses monetize attention rather than directly selling
+                products to users.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Licensing Model <span class="arrow">⌄</span></h2>
+        <p><i>Others pay to use intellectual property.</i></p>
+
+        <div class="details">
+            <p>
+                Common with software, patents, trademarks, and media.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>B2B vs B2C <span class="arrow">⌄</span></h2>
+        <p><i>Different customer types.</i></p>
+
+        <div class="details">
+            <p><b>B2B:</b> Business sells to other businesses.</p>
+            <p><b>B2C:</b> Business sells directly to consumers.</p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Customer Acquisition Cost (CAC) <span class="arrow">⌄</span></h2>
+        <p><i>The cost of acquiring a new customer.</i></p>
+
+        <div class="details">
+            <p>
+                CAC measures how much a company spends on sales and marketing
+                to gain one customer.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Lifetime Value (LTV) <span class="arrow">⌄</span></h2>
+        <p><i>The total value a customer generates over their relationship with a business.</i></p>
+
+        <div class="details">
+            <p>
+                LTV helps businesses understand how much they can spend
+                acquiring customers.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Scalability <span class="arrow">⌄</span></h2>
+        <p><i>The ability to grow without costs increasing at the same rate.</i></p>
+
+        <div class="details">
+            <p>
+                Software businesses are often highly scalable because
+                serving additional customers costs very little.
+            </p>
+        </div>
+    </div>
+
+    <div class="idea" onclick="toggleDetails(this)">
+        <h2>Competitive Advantage <span class="arrow">⌄</span></h2>
+        <p><i>Something that makes a business difficult to compete against.</i></p>
+
+        <div class="details">
+            <p>
+                Examples include strong brands, patents, network effects,
+                economies of scale, or unique technology.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function searchDefinitions() {
+        let query = document.getElementById("searchInput").value.toLowerCase();
+        let ideas = document.querySelectorAll(".idea");
+
+        ideas.forEach(idea => {
+            let text = idea.textContent.toLowerCase();
+
+            if (text.includes(query)) {
+                idea.style.display = "block";
+            } else {
+                idea.style.display = "none";
+            }
+        });
+    }
+
+    function toggleDetails(element) {
+        const details = element.querySelector('.details');
+        const arrow = element.querySelector('.arrow');
+
+        if (details.classList.contains('active')) {
+            details.classList.remove('active');
+            arrow.textContent = '⌄';
+        } else {
+            details.classList.add('active');
+            arrow.textContent = '^';
+        }
+    }
+</script>
+
+</body>
+</html>
