@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Focus</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #0a9396;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #222;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: .2s;
+        }
+
+        nav a:hover {
+            color: #74EBD5;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .idea {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .idea h2 {
+            margin: 0 0 10px 0;
+            color: #0a9396;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .arrow {
+            font-size: 1.2em;
+        }
+
+        .details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .3s ease-out;
+        }
+
+        .details.active {
+            max-height: 2500px;
+        }
+
+        .details img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+    Product Focus
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="businesses.html">Products</a>
+    <a href="learn.html">Learn</a>
+</nav>
+
+<div class="container">
+
+    <div class="search-bar">
+        <input
+            type="text"
+            id="searchInput"
+            onkeyup="searchIdeas()"
+            placeholder="Search products...">
+    </div>
+
+    <p>
+        <b>
+            Explore innovative startups, software products, and businesses that are solving real-world problems.
+        </b>
+    </p>
+
+    <h2>Featured Products</h2>
+
+    <p>
+        Discover products from a variety of industries. Learn what they do, how they work,
+        and what makes them interesting.
+    </p>
+
+    <div class="idea" onclick="toggleDetails(this)">
+
+        <h2>
+            New Funding Product for Startups
+            <span class="arrow">⌄</span>
+        </h2>
+
+        <p>
+            <i>
+                A desktop platform that helps founders discover and organize funding opportunities from one searchable workspace.
+            </i>
+        </p>
+
+        <div class="details">
+
+            <img src="genvium.png" alt="Genvium">
+
+            <h3>About Genvium</h3>
+
+            <p>
+                Genvium helps startups discover, organize, and track grants, tax credits,
+                accelerators, startup competitions, and investor opportunities from a
+                centralized searchable platform designed to reduce friction and help
+                founders move faster.
+            </p>
+
+            <h3>How Does It Work?</h3>
+
+            <p>
+                Genvium is currently available as a native desktop application for Apple
+                Silicon Macs. Users simply download the application to access a searchable
+                collection of startup funding opportunities and supporting resources.
+            </p>
+
+            <p>
+                Instead of searching dozens of websites individually, founders can use one
+                platform to research, organize, and keep track of relevant opportunities.
+            </p>
+
+            <h3>Key Features</h3>
+
+            <ul>
+                <li>Centralized funding search</li>
+                <li>Grant discovery</li>
+                <li>Tax credit database</li>
+                <li>Accelerator and incubator listings</li>
+                <li>Startup competition discovery</li>
+                <li>Investor opportunity listings</li>
+                <li>Search and filtering tools</li>
+                <li>Saved opportunities</li>
+                <li>Application tracking</li>
+                <li>Genvium Plus AI assistant</li>
+            </ul>
+
+            <h3>What Makes It Interesting?</h3>
+
+            <p>
+                Funding opportunities for startups are often scattered across government
+                websites, nonprofit organizations, accelerators, universities, corporate
+                programs, and investor platforms.
+            </p>
+
+            <p>
+                Genvium is working to make these fragmented funding resources easier to
+                discover by bringing them together into one searchable experience. Rather
+                than replacing the original sources, the platform aims to simplify how
+                founders find, organize, and revisit opportunities throughout their funding
+                journey.
+            </p>
+
+            <h3>Availability</h3>
+
+            <ul>
+                <li>Desktop application</li>
+                <li>Apple Silicon Macs</li>
+                <li>Developed by Auduvant Technologies</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function searchIdeas() {
+
+    let query = document.getElementById("searchInput").value.toLowerCase();
+
+    let ideas = document.querySelectorAll(".idea");
+
+    ideas.forEach(idea => {
+
+        let text = idea.textContent.toLowerCase();
+
+        if (new RegExp(query, "i").test(text)) {
+            idea.style.display = "block";
+        } else {
+            idea.style.display = "none";
+        }
+
+    });
+
+}
+
+function toggleDetails(element) {
+
+    const details = element.querySelector(".details");
+    const arrow = element.querySelector(".arrow");
+
+    if(details.classList.contains("active")){
+
+        details.classList.remove("active");
+        arrow.textContent="⌄";
+
+    }else{
+
+        details.classList.add("active");
+        arrow.textContent="^";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
