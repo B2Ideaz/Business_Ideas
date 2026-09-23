@@ -1,1 +1,409 @@
-   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="j425dWtoZbO4wh3GusaQlFBRPqUFYyocIAsv5WaltIE" />
+    <title>Business Ideas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Keep existing styles, but remove the .idea:hover .details part */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9; /* Or use your gradient from styles.css */
+            color: #333;
+        }
+        header {
+            background-color: #0a9396; /* Or #333 from styles.css */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .idea {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            overflow: hidden; /* Keep this */
+        }
+        .idea h2 {
+            color: #0a9396; /* Or #333 from styles.css */
+            margin: 0 0 10px 0; /* Add some bottom margin */
+            display: flex; /* Use flexbox for alignment */
+            justify-content: space-between; /* Pushes arrow to the right */
+            align-items: center; /* Vertically align title and arrow */
+        }
+        .idea h2 .arrow {
+            font-size: 1.2em; /* Make arrow slightly larger */
+            margin-left: 10px; /* Space between title and arrow */
+        }
+        .idea .details {
+            /* Remove display: none; and max-height: 0; */
+            /* Control visibility with JS/classes */
+            max-height: 0; /* Start hidden */
+            overflow: hidden; /* Keep this */
+            transition: max-height 0.3s ease-out; /* Smooth transition */
+        }
+        /* New class to show details */
+        .idea .details.active {
+             max-height: 1000px; /* Or a sufficiently large value */
+             /* Optional: Add padding-top if needed */
+             /* padding-top: 15px; */
+        }
+
+        nav {
+            background: #222;
+            padding: 15px;
+            text-align: center;
+        }
+    
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+    
+        nav a:hover {
+            color: #74EBD5;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        Business Ideas
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="businesses.html">Business Products</a>
+    </nav>
+    
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" onkeyup="searchIdeas()" placeholder="Search for ideas...">
+        </div>
+        <p><b>NB: "This content is for informational purposes only and does not constitute professional or academic advice."</b></p>
+        
+        <h2>New to Business?</h2>
+        <p>
+            Learn key business concepts such as revenue, profit, <br />
+            business models, market share, CAC and so much more.
+        </p>
+        <button onclick="window.location.href='learn.html'">Go to Learn </button>
+
+        <h1 style="color: white;">New</h1>
+        <p></p>
+        <div class="idea" onclick="toggleDetails(this)">
+            <h2>AI Immigration Guidance Chatbot <span class="arrow">⌄</span></h2>
+            <p><i>An AI-powered chatbot specialized in immigration guidance, visa pathways, and publicly available legal information.</i></p>
+            <div class="details">
+            <p>
+                The platform helps immigrants, students, workers, and travelers understand immigration processes through AI-powered conversational guidance. 
+                Instead of paying high consultation fees for basic questions, users can access simplified explanations of publicly available immigration information anytime.
+            </p>
+
+            <h4>1. Possible Target Audience (Customer Base)</h4>
+            <ul>
+                <li>International Students</li>
+                <li>Work Visa Applicants</li>
+                <li>Families Applying for Immigration Benefits</li>
+                <li>Refugees & Asylum Seekers</li>
+                <li>Immigration Law Firms</li>
+                <li>HR Departments Hiring International Talent</li>
+                <li>Travelers Seeking Visa Information</li>
+            </ul>
+
+            <h4>2. Problem Being Solved</h4>
+            <ul>
+                <li>High Consultation Costs: Many people pay hundreds of dollars for basic immigration questions.</li>
+                <li>Complex Legal Language: Government immigration websites are often difficult to understand.</li>
+                <li>Limited Access to Attorneys: Not everyone can afford or easily reach immigration professionals.</li>
+                <li>Information Overload: Immigration rules, forms, and requirements can feel overwhelming.</li>
+                <li>Time Delays: People wait days or weeks just to get answers to simple procedural questions.</li>
+            </ul>
+
+            <h3>3. Business Model - How Revenue Is Generated</h3>
+            <ul>
+                <li>Freemium Model: Basic immigration guidance is free, advanced tools require payment.</li>
+                <li>Premium Subscription: Users pay monthly for document review assistance, saved chats, and advanced AI features.</li>
+                <li>Law Firm Partnerships: Immigration attorneys can receive qualified leads from the platform.</li>
+                <li>Enterprise Licensing: Universities and companies can provide the chatbot to international students or employees.</li>
+                <li>Advertising Revenue: Carefully selected ads from trusted immigration-related services.</li>
+                <li>API Access: Other platforms can integrate the immigration AI into their systems.</li>
+            </ul>
+
+            <h3>4. Core Competency (Competitive Advantage)</h3>
+            <ul>
+                <li>24/7 Accessibility: Users can receive guidance anytime without scheduling consultations.</li>
+                <li>AI Simplification: Complex immigration terminology is translated into simple explanations.</li>
+                <li>Massive Knowledge Base: The chatbot can process large amounts of publicly available immigration data quickly.</li>
+                <li>Multi-Language Support: Immigrants from different countries can interact in their preferred language.</li>
+                <li>Lower Cost Alternative: Reduces barriers for people who cannot afford expensive consultations.</li>
+                <li>Fast Updates: Immigration policy changes can be integrated rapidly into the system.</li>
+            </ul>
+
+            <h3>5. How the Product Can Be Made (Non-Technical Explanation)</h3>
+            <ul>
+                <li>Collect Public Immigration Information: Gather publicly available immigration laws, visa requirements, and government guidelines.</li>
+                <li>Train the AI Model: Teach the chatbot how to answer immigration-related questions accurately and conversationally.</li>
+                <li>Create a Web & Mobile Interface: Build a simple chat platform where users can ask questions naturally.</li>
+                <li>Add Search & Document Features: Allow users to upload forms or search for visa categories.</li>
+                <li>Implement Safety & Disclaimer Systems: Clearly inform users that the chatbot provides informational guidance, not official legal representation.</li>
+                <li>Continuously Update Information: Monitor immigration policy updates and improve AI responses over time.</li>
+            </ul>
+            </div>
+        </div>
+        <p></p>
+        <p></p>
+
+        <h1 style="color: white;">Old</h1>
+
+        <div class="idea" onclick="toggleDetails(this)">
+             <h2>Augmented Reality for Scientific Experiments <span class="arrow">⌄</span></h2>
+            <p><i>AR technology enables immersive scientific experiments without real-world hazards.</i></p>
+            <div class="details">
+                <p>Biology students can perform virtual dissections, Chemistry students can mix chemicals safely, and Physics students can simulate zero-gravity experiments.</p>
+                <h4>1. Possible Target Audience (Customer Base)</h4>
+                <ul>
+                    <li>Educational Institutions: Schools, colleges, and universities looking for innovative teaching methods.</li>
+                    <li>Students & Educators: Learners from high school to university level who need hands-on experience in science.</li>
+                    <li>EdTech Companies: Businesses that offer digital learning solutions and can integrate AR into their platforms.</li>
+                    <li>Research Labs & Training Centers: Organizations training scientists or professionals in complex experiments.</li>
+                    <li>Homeschooling & Self-Learners: Individuals who want access to advanced scientific learning without expensive lab equipment.</li>
+                </ul>
+                <h4>2. Problem Being Solved</h4>
+                 <ul>
+                    <li>High Costs: Science labs require expensive equipment, materials, and maintenance.</li>
+                    <li>Safety Risks: Dangerous chemical reactions, dissections, or physics experiments carry hazards, doing them this way eliminates that risk.</li>
+                    <li>Limited Access: Many schools lack proper lab facilities, restricting hands-on learning, this method may be cheaper.</li>
+                    <li>Environmental Concerns: Reducing waste from chemical experiments and biological specimens.</li>
+                </ul>
+                <h3>3. Business Model - How Revenue Is Generated</h3>
+                <ul>
+                    <li>Subscription Model: Schools, universities, and individual learners pay a monthly or yearly fee for access.</li>
+                    <li>One-Time Purchase: Institutions or individuals can buy the software/license outright.</li>
+                    <li>Freemium Model: Offer basic features for free and charge for premium content (e.g., advanced experiments).</li>
+                    <li>Partnerships & Licensing: Sell AR modules to EdTech companies or integrate into learning platforms.</li>
+                    <li>Enterprise Sales: Custom solutions for research labs, medical schools, or corporate training.</li>
+                </ul>
+                <h3>4. Core Competency (Competitive Advantage)</h3>
+                <ul>
+                    <li>Cost-Effective Science Labs: Schools can save on lab infrastructure and materials.</li>
+                    <li>Immersive Learning Experience: AR enhances engagement and understanding more than textbooks or videos.</li>
+                    <li>Real-Time Feedback & AI Assistance: AR can guide students step-by-step, reducing mistakes.</li>
+                    <li>Portability & Scalability: Students can conduct experiments anytime, anywhere, using a tablet or AR headset.</li>
+                    <li>Eco-Friendly & Ethical: Virtual dissections eliminate the need for real animal specimens, and virtual chemistry labs reduce chemical waste.</li>
+                </ul>
+                <h3>5. How the Product Can Be Made (Non-Technical Explanation)</h3>
+                <ul>
+                    <li>Create 3D Models & Simulations: Digital versions of lab equipment, biological specimens, and chemical reactions are designed.</li>
+                    <li>Build AR Software: A mobile app, tablet app, or AR headset application overlays these models into the real world.</li>
+                    <li>Interactive Features: Users can manipulate objects (e.g., mix virtual chemicals, dissect a 3D frog) through touch or hand gestures.</li>
+                    <li>AI-Powered Guidance: Built-in AI explains steps, corrects mistakes, and provides learning feedback.</li>
+                    <li>Cloud-Based Access: Students and teachers can access experiments anytime, without downloading heavy software.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="idea" onclick="toggleDetails(this)">
+            <h2>Halophiles for Desalination <span class="arrow">⌄</span></h2>
+            <p><i>Using salt-eating bacteria to desalinate seawater efficiently and reduce waste brine.</i></p>
+            <div class="details">
+                <p>Halophiles can offer a low-energy alternative to traditional desalination processes by biologically removing salt from seawater.</p>
+                <h4>1. Possible Target Audience (Customer Base)</h4>
+                <ul>
+                    <li>Water Utilities & Municipalities</li>
+                    <li>Government & NGOs</li>
+                    <li>Desalination Companies</li>
+                    <li>Developing Countries</li>
+                    <li>Agricultural Operations</li>
+                </ul>
+                <h4>2. Problem Being Solved</h4>
+                <ul>
+                    <li>High Energy Use</li>
+                    <li>Waste Brine Disposal</li>
+                    <li>Cost Barrier</li>
+                    <li>Freshwater Scarcity</li>
+                </ul>
+                <h3>3. Business Model - How Revenue Is Generated</h3>
+                <ul>
+                    <li>Licensing Biotechnology</li>
+                    <li>Consulting Services</li>
+                    <li>Grants & Environmental Funding</li>
+                    <li>Custom Installations</li>
+                    <li>SaaS Platform for Monitoring</li>
+                </ul>
+                <h3>4. Core Competency (Competitive Advantage)</h3>
+                <ul>
+                    <li>Eco-Friendly Process</li>
+                    <li>Energy Efficient</li>
+                    <li>Scalable and Modular</li>
+                    <li>Sustainable & Self-Regenerating</li>
+                    <li>Cutting-Edge Science</li>
+                </ul>
+                <h3>5. How the Product Can Be Made (Non-Technical Explanation)</h3>
+                <ul>
+                    <li>Identify Suitable Halophiles</li>
+                    <li>Design Bioreactor Systems</li>
+                    <li>Monitor & Optimize</li>
+                    <li>Develop Maintenance Protocols</li>
+                    <li>Pilot & Scale Up</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="idea" onclick="toggleDetails(this)">
+             <h2>Sports Facility Mapping App <span class="arrow">⌄</span></h2>
+            <p><i>An app that maps all public sports facilities using Google Maps API.</i></p>
+            <div class="details">
+                <p>The app helps users locate nearby sports venues and ensures accurate, verified data through crowd or agent contributions.</p>
+                <h4>1. Possible Target Audience (Customer Base)</h4>
+                <ul>
+                    <li>Fitness Enthusiasts & Athletes</li>
+                    <li>Schools & Community Groups</li>
+                    <li>Local Governments & Parks Departments</li>
+                    <li>Real Estate Developers</li>
+                    <li>Advertisers & Sponsors</li>
+                </ul>
+                <h4>2. Problem Being Solved</h4>
+                <ul>
+                    <li>Lack of Awareness</li>
+                    <li>Outdated Information</li>
+                    <li>Unverified Access</li>
+                    <li>No Central Platform</li>
+                </ul>
+                <h3>3. Business Model - How Revenue Is Generated</h3>
+                <ul>
+                    <li>Ads & Promotions</li>
+                    <li>Freemium Model</li>
+                    <li>Sponsorship Deals</li>
+                    <li>Analytics & Data Licensing</li>
+                    <li>In-App Booking Fees</li>
+                </ul>
+                <h3>4. Core Competency (Competitive Advantage)</h3>
+                <ul>
+                    <li>Verified Data</li>
+                    <li>Geolocation Accuracy</li>
+                    <li>Community Engagement</li>
+                    <li>Multi-Sport Inclusion</li>
+                    <li>Cross-Platform Access</li>
+                </ul>
+                <h3>5. How the Product Can Be Made (Non-Technical Explanation)</h3>
+                <ul>
+                    <li>Use Google Maps API</li>
+                    <li>Build a User-Friendly Interface</li>
+                    <li>Allow Crowd Contributions</li>
+                    <li>Create a Verification Network</li>
+                    <li>Develop Admin Tools</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="idea" onclick="toggleDetails(this)">
+             <h2>AI-Powered Background Noise Removal <span class="arrow">⌄</span></h2>
+            <p><i>An extension that removes background noise from video calls using AI.</i></p>
+            <div class="details">
+                <p>This tool filters out disruptive sounds during online meetings, ensuring professional-quality communication.</p>
+                <h4>1. Possible Target Audience (Customer Base)</h4>
+                <ul>
+                    <li>Remote Workers & Freelancers</li>
+                    <li>Corporate Teams</li>
+                    <li>Call Centers & BPOs</li>
+                    <li>Podcasters & Streamers</li>
+                    <li>Schools & Online Tutors</li>
+                </ul>
+                <h4>2. Problem Being Solved</h4>
+                <ul>
+                    <li>Poor Call Quality</li>
+                    <li>Accessibility Issues</li>
+                    <li>Distraction & Fatigue</li>
+                    <li>No Native Solution</li>
+                </ul>
+                <h3>3. Business Model - How Revenue Is Generated</h3>
+                <ul>
+                    <li>Freemium Model</li>
+                    <li>Browser Extension Sales</li>
+                    <li>Corporate Licenses</li>
+                    <li>SaaS API Licensing</li>
+                    <li>Marketplace Add-Ons</li>
+                </ul>
+                <h3>4. Core Competency (Competitive Advantage)</h3>
+                <ul>
+                    <li>Advanced AI Filters</li>
+                    <li>Real-Time Processing</li>
+                    <li>Lightweight & Browser-Based</li>
+                    <li>Customizable Settings</li>
+                    <li>Privacy-Preserving</li>
+                </ul>
+                <h3>5. How the Product Can Be Made (Non-Technical Explanation)</h3>
+                <ul>
+                    <li>Train the AI Model</li>
+                    <li>Develop a Browser Extension</li>
+                    <li>Ensure Low Latency</li>
+                    <li>User-Friendly UI</li>
+                    <li>Cross-Platform Compatibility</li>
+                </ul>
+            </div>
+        </div>
+
+    <script>
+        // Keep your existing searchIdeas function
+        function searchIdeas() {
+            let query = document.getElementById("searchInput").value.toLowerCase();
+            let ideas = document.querySelectorAll(".idea");
+            ideas.forEach(idea => {
+                let text = idea.textContent.toLowerCase();
+                // Using test() method is generally better for regex checks
+                if (new RegExp(query, "i").test(text)) {
+                    idea.style.display = "flex"; // Use flex or block depending on your layout needs
+                } else {
+                    idea.style.display = "none";
+                }
+            });
+        }
+
+        // Add the new toggleDetails function
+        function toggleDetails(element) {
+            const details = element.querySelector('.details');
+            const arrow = element.querySelector('.arrow');
+
+            // Check if details section is currently active (visible)
+            if (details.classList.contains('active')) {
+                details.classList.remove('active');
+                arrow.textContent = '⌄'; // Change arrow to down
+            } else {
+                details.classList.add('active');
+                arrow.textContent = '^'; // Change arrow to up
+            }
+        }
+    </script>
+</body>
+</html>   
