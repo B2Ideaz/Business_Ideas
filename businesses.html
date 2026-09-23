@@ -4,111 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Product Focus</title>
-
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f9f9f9;
-            color: #333;
-        }
-
-        header {
-            background-color: #0a9396;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        nav {
-            background: #222;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: bold;
-            transition: .2s;
-        }
-
-        nav a:hover {
-            color: #74EBD5;
-        }
-
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: 20px auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .search-bar {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .search-bar input {
-            width: 50%;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .idea {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,.1);
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .idea h2 {
-            margin: 0 0 10px 0;
-            color: #0a9396;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .arrow {
-            font-size: 1.2em;
-        }
-
-        .details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height .3s ease-out;
-        }
-
-        .details.active {
-            max-height: 2500px;
-        }
-
-        .details img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        ul li {
-            margin-bottom: 8px;
-        }
-
-    </style>
-
 </head>
 
 <body>
@@ -123,7 +19,7 @@
     <a href="learn.html">Learn</a>
 </nav>
 
-<div class="container">
+<main class="container">
 
     <div class="search-bar">
         <input
@@ -133,17 +29,13 @@
             placeholder="Search products...">
     </div>
 
-    <p>
-        <b>
-            Explore innovative startups, software products, and businesses that are solving real-world problems.
-        </b>
-    </p>
+    <p><b>Explore innovative startups, software products, and businesses that are solving real-world problems.</b></p>
 
-    <h2>Product Focus</h2>
+    <h1>Product Focus</h1>
 
     <p>
-        Discover products from a variety of industries. Learn what they do, how they work,
-        and what makes them interesting.
+        Discover products from a variety of industries. Learn what they do,
+        how they work, and what makes them interesting.
     </p>
 
     <div class="idea" onclick="toggleDetails(this)">
@@ -155,13 +47,14 @@
 
         <p>
             <i>
-                A desktop platform that helps founders discover and organize funding opportunities from one searchable workspace.
+                A desktop platform that helps founders discover and organize funding
+                opportunities from one searchable workspace.
             </i>
         </p>
 
         <div class="details">
 
-            <img src="genvium.png" width="500" height="400" alt="Genvium">
+            <img src="genvium.png" alt="Genvium">
 
             <h3>About Genvium</h3>
 
@@ -225,52 +118,33 @@
             </ul>
 
         </div>
-
     </div>
 
-</div>
+</main>
 
 <script>
-
 function searchIdeas() {
-
-    let query = document.getElementById("searchInput").value.toLowerCase();
-
-    let ideas = document.querySelectorAll(".idea");
+    const query = document.getElementById("searchInput").value.toLowerCase().trim();
+    const ideas = document.querySelectorAll(".idea");
 
     ideas.forEach(idea => {
-
-        let text = idea.textContent.toLowerCase();
-
-        if (new RegExp(query, "i").test(text)) {
-            idea.style.display = "block";
-        } else {
-            idea.style.display = "none";
-        }
-
+        const text = idea.textContent.toLowerCase();
+        idea.style.display = text.includes(query) ? "block" : "none";
     });
-
 }
 
 function toggleDetails(element) {
-
     const details = element.querySelector(".details");
     const arrow = element.querySelector(".arrow");
 
-    if(details.classList.contains("active")){
-
+    if (details.classList.contains("active")) {
         details.classList.remove("active");
-        arrow.textContent="⌄";
-
-    }else{
-
+        arrow.textContent = "⌄";
+    } else {
         details.classList.add("active");
-        arrow.textContent="^";
-
+        arrow.textContent = "^";
     }
-
 }
-
 </script>
 
 </body>
